@@ -127,7 +127,8 @@ Widget valor() {
         child: Row(children: [
           Container(
             margin: EdgeInsets.only(right: 5),
-            child: Icon(Icons.monetization_on, size: 25, color: Colors.orangeAccent),
+            child: Icon(Icons.monetization_on,
+                size: 25, color: Colors.orangeAccent),
           ),
           Text(
             "Valor:",
@@ -169,7 +170,8 @@ Widget descricao() {
                   children: [
                     Container(
                       margin: EdgeInsets.only(right: 5),
-                      child: Icon(Icons.format_align_left, size: 25, color: Colors.orangeAccent),
+                      child: Icon(Icons.format_align_left,
+                          size: 25, color: Colors.orangeAccent),
                     ),
                     Text(
                       "Descrição:",
@@ -215,7 +217,8 @@ Widget caracteristicas() {
                   children: [
                     Container(
                       margin: EdgeInsets.only(right: 5, bottom: 5),
-                      child: Icon(Icons.local_hotel, size: 25, color: Colors.orangeAccent),
+                      child: Icon(Icons.local_hotel,
+                          size: 25, color: Colors.orangeAccent),
                     ),
                     Text(
                       "Características:",
@@ -224,86 +227,140 @@ Widget caracteristicas() {
                     ),
                   ],
                 ),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Row(
-                     children: <Widget>[
-                       Column(
-                         children: <Widget>[
-                           Container(
-                             margin: EdgeInsets.only(top: 5, bottom: 5),
-                             child: Text("5", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-                           Container(
-                             child: Text("Dorms", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-
-                         ],
-                       ),
-                       Column(
-                         children: <Widget>[
-                           Container(
-                             margin: EdgeInsets.only(top: 5, bottom: 5, left: 25),
-                             child: Text("3", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-                           Container(
-                             margin: EdgeInsets.only(left: 25),
-                             child: Text("WC", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-
-                         ],
-                       ),
-                       Column(
-                         children: <Widget>[
-                           Container(
-                             margin: EdgeInsets.only(top: 5, bottom: 5, left: 25),
-                             child: Text("6", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-                           Container(
-                             margin: EdgeInsets.only(left: 25),
-                             child: Text("Vagas", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-
-                         ],
-                       ),
-                       Column(
-                         children: <Widget>[
-                           Container(
-                             margin: EdgeInsets.only(top: 5, bottom: 5, left: 25),
-                             child: Text("2", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-                           Container(
-                             margin: EdgeInsets.only(left: 25),
-                             child: Text("Cozinha", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-
-                         ],
-                       ),
-                       Column(
-                         children: <Widget>[
-                           Container(
-                             margin: EdgeInsets.only(top: 5, bottom: 5, left: 25),
-                             child: Text("352", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-                           Container(
-                             margin: EdgeInsets.only(left: 25),
-                             child: Text("M²", style:
-                             TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                           ),
-
-                         ],
-                       ),
-                     ],
-                    ))
+                Row(
+                  children: [
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 15, top: 5, bottom: 5),
+                                  child: Text(
+                                    "5",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "Dorms",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 15, top: 5, bottom: 5),
+                                  child: Text(
+                                    "3",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "WC",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 15, top: 5, bottom: 5),
+                                  child: Text(
+                                    "6",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "Vagas",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 15, top: 5, bottom: 5),
+                                  child: Text(
+                                    "1",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "Cozinha",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Row(
+                          children: <Widget>[
+                            Column(
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 15, top: 5, bottom: 5),
+                                  child: Text(
+                                    "352",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 15),
+                                  child: Text(
+                                    "M²",
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        )),
+                  ],
+                )
               ],
             ),
           )
