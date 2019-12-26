@@ -69,9 +69,6 @@ class _MenuLateralBuilder extends State<MenuLateralBuilder> {
               ],
             ),
             onTap: () {
-              // Update the state of the app
-              // ...
-              // Then close the drawer
               Navigator.pop(context);
             },
           ),
@@ -89,16 +86,44 @@ class _MenuLateralBuilder extends State<MenuLateralBuilder> {
               ],
             ),
             onTap: () {
-              if (Platform.isAndroid) {
-                SystemNavigator.pop();
-              } else if (Platform.isIOS) {
-                exit(0);
-              }
-
+              showAlertDialog(context);
             },
           ),
         ],
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  Widget cancelaButton = FlatButton(
+    child: Text("Cancelar"),
+    onPressed:  () {Navigator.of(context).pop();},
+  );
+  Widget continuaButton = FlatButton(
+    child: Text("Sair"),
+    onPressed:  () {
+      if (Platform.isAndroid) {
+        SystemNavigator.pop();
+      } else if (Platform.isIOS) {
+        exit(0);
+      }
+    },
+  );
+
+  AlertDialog alert = AlertDialog(
+    title: Text("Achei Mudei"),
+    content: Text("Deseja sair do aplicativo ?"),
+    actions: [
+      cancelaButton,
+      continuaButton,
+    ],
+  );
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

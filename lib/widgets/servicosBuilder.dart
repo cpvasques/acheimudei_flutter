@@ -22,6 +22,7 @@ class _ServicosBuilder extends State<ServicosBuilder> {
               servicosMaterial('Escritório de Advocacia', FontAwesomeIcons.gavel),
               servicosMaterial('Documentista Imobiliário', FontAwesomeIcons.fileAlt),
               servicosMaterial('Elaboração de Contrato', FontAwesomeIcons.handshake),
+              servicosMaterial('Assessoria', FontAwesomeIcons.userTie),
             ],
           ),
         ),
