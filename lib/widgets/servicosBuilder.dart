@@ -14,7 +14,7 @@ class _ServicosBuilder extends State<ServicosBuilder> {
       primary: false,
       slivers: <Widget>[
         SliverPadding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(5),
           sliver: SliverGrid.count(
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
