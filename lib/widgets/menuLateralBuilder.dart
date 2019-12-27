@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:teste_funcando/widgets/botaoGoogle.dart';
 import 'dart:io';
 import 'dart:io' show Platform;
 
@@ -11,7 +12,32 @@ class MenuLateralBuilder extends StatefulWidget {
 class _MenuLateralBuilder extends State<MenuLateralBuilder> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return menuDeslogado(context);
+  }
+}
+
+menuDeslogado(BuildContext){
+  return Drawer(
+      child: ListView(
+        children: <Widget>[
+          Container(
+            height: 250.0,
+            child: ListTile(
+              title: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  GoogleBuilder(),
+                ],
+              ),
+            )
+          )
+        ],
+      )
+    );
+}
+
+menuLogado(BuildContext context){
+  return Drawer(
       child: ListView(
         children: <Widget>[
           Container(
@@ -92,7 +118,6 @@ class _MenuLateralBuilder extends State<MenuLateralBuilder> {
         ],
       ),
     );
-  }
 }
 
 showAlertDialog(BuildContext context) {

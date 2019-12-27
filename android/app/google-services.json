@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "503195068759",
+    "firebase_url": "https://acheimudei-b4b73.firebaseio.com",
+    "project_id": "acheimudei-b4b73",
+    "storage_bucket": "acheimudei-b4b73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503195068759:android:04cecf6c9372606bbb3612",
+        "android_client_info": {
+          "package_name": "br.com.acheimudei.achei_mudei"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503195068759-jq8oh85umk24sj6hgji0ps66f366fah1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.acheimudei.achei_mudei",
+            "certificate_hash": "807f22eda8af10402116fd8dcd105a3e2bb14f6d"
+          }
+        },
+        {
+          "client_id": "503195068759-0q5l5g496kf1bkp1gpdk7blst4v861k3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8rqP5xWP9EPOMfiUqtyrtbKiEEo3gCR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503195068759-0q5l5g496kf1bkp1gpdk7blst4v861k3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
