@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:teste_funcando/login_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:teste_funcando/home_page.dart';
 
 String name;
 String email;
@@ -8,7 +11,7 @@ String imageUrl;
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
-Future<String> signInWithGoogle() async {
+Future<String> signInWithGoogle(BuildContext context) async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
       await googleSignInAccount.authentication;
@@ -31,23 +34,20 @@ Future<String> signInWithGoogle() async {
   assert(user.displayName != null);
   assert(user.photoUrl != null);
 
-  name = user.displayName;
-  email = user.email;
-  imageUrl = user.photoUrl;
-
-  print(name);
-  print(email);
-  print(imageUrl);
+  String name = user.displayName;
+  String email = user.email;
+  String imageUrl = user.photoUrl;
 
   if (name.contains(" ")) {
    name = name.substring(0, name.indexOf(" "));
   }
 
+  Navigator.of(context)
+      .push(MaterialPageRoute(builder: (context) => HomePage(name: name, email: email, imageUrl: imageUrl)));
+
   return 'signInWithGoogle succeeded: $user';
 }
 
-void signOutGoogle() async{
+void signOutGoogle(BuildContext context) async{
   await googleSignIn.signOut();
-
-  print("User Sign Out");
 }

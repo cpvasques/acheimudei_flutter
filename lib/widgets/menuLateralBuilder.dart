@@ -1,42 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:teste_funcando/widgets/botaoGoogle.dart';
+import 'package:teste_funcando/controllers/sign_in_google.dart';
 import 'dart:io';
 import 'dart:io' show Platform;
 
 class MenuLateralBuilder extends StatefulWidget {
+  String name;
+  String email;
+  String imageUrl;
+
+  MenuLateralBuilder({this.name, this.email, this.imageUrl});
+
   @override
-  _MenuLateralBuilder createState() => _MenuLateralBuilder();
+  _MenuLateralBuilder createState() => _MenuLateralBuilder(name, email, imageUrl);
 }
 
 class _MenuLateralBuilder extends State<MenuLateralBuilder> {
+  String name;
+  String email;
+  String imageUrl;
+
+  _MenuLateralBuilder(this.name, this.email, this.imageUrl);
+
   @override
   Widget build(BuildContext context) {
-    return menuDeslogado(context);
+    return menuLogado(context, name, email, imageUrl);
   }
 }
 
-menuDeslogado(BuildContext){
-  return Drawer(
-      child: ListView(
-        children: <Widget>[
-          Container(
-            height: 250.0,
-            child: ListTile(
-              title: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  GoogleBuilder(),
-                ],
-              ),
-            )
-          )
-        ],
-      )
-    );
-}
-
-menuLogado(BuildContext context){
+menuLogado(BuildContext context, name, email, imageUrl){
   return Drawer(
       child: ListView(
         children: <Widget>[
@@ -49,13 +41,12 @@ menuLogado(BuildContext context){
                   CircleAvatar(
                     radius: 92.0,
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(
-                          "https://www.dhresource.com/0x0/f2/albu/g8/M01/DC/89/rBVaV1wN2rqAE5GDAAHlA_NOGoc884.jpg"),
+                      backgroundImage: NetworkImage(imageUrl),
                       maxRadius: 88.0,
                     ),
                   ),
                   Text(
-                    "Caue Pievetti Vasques",
+                    name,
                     style: TextStyle(fontSize: 22),
                   ),
                 ],
@@ -128,6 +119,8 @@ showAlertDialog(BuildContext context) {
   Widget continuaButton = FlatButton(
     child: Text("Sair"),
     onPressed:  () {
+      signOutGoogle(context);
+
       if (Platform.isAndroid) {
         SystemNavigator.pop();
       } else if (Platform.isIOS) {

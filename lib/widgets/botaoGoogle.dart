@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:teste_funcando/controllers/sign_in_google.dart';
 
-
-
 class GoogleBuilder extends StatefulWidget {
   @override
   _GoogleBuilder createState() => _GoogleBuilder();
@@ -15,11 +13,9 @@ class _GoogleBuilder extends State<GoogleBuilder> {
     return OutlineButton(
         splashColor: Colors.grey,
         onPressed: () {
-          signInWithGoogle().whenComplete(() {
-            print('logado');
-          });
+          signInWithGoogle(context);
         },
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         highlightElevation: 0,
         borderSide: BorderSide(color: Colors.grey),
         child: Padding(
