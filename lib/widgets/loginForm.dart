@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_funcando/widgets/botaoGoogle.dart';
+import 'package:achei_mudei/widgets/botaoGoogle.dart';
 
 class LoginForm extends StatefulWidget {
   @override

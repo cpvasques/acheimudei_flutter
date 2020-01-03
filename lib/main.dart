@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_funcando/home_page.dart';
-import 'package:teste_funcando/login_page.dart';
+import 'package:achei_mudei/login_page.dart';
 
 
 void main() {
@@ -17,7 +16,6 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
    @override
   Widget build(BuildContext context) {
-    //return HomePage();
      return LoginPage();
   }
 

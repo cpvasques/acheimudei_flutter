@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_funcando/detalhe_anuncio.dart';
+import 'package:achei_mudei/detalhe_anuncio.dart';
 
 class AnunciosBuilder extends StatefulWidget {
   @override

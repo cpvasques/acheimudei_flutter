@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:teste_funcando/controllers/sign_in_google.dart';
+import 'package:achei_mudei/controllers/sign_in_google.dart';
 import 'dart:io';
 import 'dart:io' show Platform;
 

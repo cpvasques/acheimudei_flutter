@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_funcando/widgets/servicosDetalhesBuilder.dart';
+import 'package:achei_mudei/widgets/servicosDetalhesBuilder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ServicosBuilder extends StatefulWidget {

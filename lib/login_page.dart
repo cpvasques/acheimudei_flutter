@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste_funcando/widgets/botaoGoogle.dart';
-import 'package:teste_funcando/widgets/botaoFacebook.dart';
-import 'package:teste_funcando/widgets/loginForm.dart';
+import 'package:achei_mudei/widgets/botaoGoogle.dart';
+import 'package:achei_mudei/widgets/botaoFacebook.dart';
+import 'package:achei_mudei/widgets/loginForm.dart';
 
 class LoginPage extends StatefulWidget {
   @override
