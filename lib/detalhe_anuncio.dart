@@ -128,7 +128,7 @@ Widget valor() {
           Container(
             margin: EdgeInsets.only(right: 5),
             child: Icon(Icons.monetization_on,
-                size: 25, color: Color(0xffe17315)),
+                size: 25, color: Color(0xfffe7400)),
           ),
           Text(
             "Valor:",
@@ -171,7 +171,7 @@ Widget descricao() {
                     Container(
                       margin: EdgeInsets.only(right: 5),
                       child: Icon(Icons.format_align_left,
-                          size: 25, color: Color(0xffe17315)),
+                          size: 25, color: Color(0xfffe7400)),
                     ),
                     Text(
                       "Descrição:",
@@ -218,7 +218,7 @@ Widget caracteristicas() {
                     Container(
                       margin: EdgeInsets.only(right: 5, bottom: 5),
                       child: Icon(Icons.local_hotel,
-                          size: 25, color: Color(0xffe17315)),
+                          size: 25, color: Color(0xfffe7400)),
                     ),
                     Text(
                       "Características:",
@@ -374,7 +374,7 @@ Widget btnAchei() {
     child: MaterialButton(
         onPressed: () {},
         height: 45,
-        color: Color(0xffe17315),
+        color: Color(0xfffe7400),
         textColor: Colors.white,
         child: Text(
           'ACHEI !',

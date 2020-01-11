@@ -138,14 +138,14 @@ Widget buildTextField(String label, TextEditingController controller,
       controller: controller,
       decoration: InputDecoration(
           labelText: label,
-          labelStyle: TextStyle(color: Color(0xffe17315)),
+          labelStyle: TextStyle(color: Color(0xfffe7400)),
           border: OutlineInputBorder(),
           focusedBorder:
               OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
           enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
-            color: Color(0xffe17315),
+            color: Color(0xfffe7400),
           ))),
-      style: TextStyle(color: Color(0xffe17315), fontSize: 20.0),
+      style: TextStyle(color: Color(0xfffe7400), fontSize: 20.0),
       onChanged: funcao);
 }
