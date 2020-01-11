@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:achei_mudei/controllers/sign_in_google.dart';
+import 'package:achei_mudei/controllers/sign_in_facebook.dart';
 import 'dart:io';
 import 'dart:io' show Platform;
 
@@ -8,27 +9,29 @@ class MenuLateralBuilder extends StatefulWidget {
   String name;
   String email;
   String imageUrl;
+  String login;
 
-  MenuLateralBuilder({this.name, this.email, this.imageUrl});
+  MenuLateralBuilder({this.name, this.email, this.imageUrl, this.login});
 
   @override
-  _MenuLateralBuilder createState() => _MenuLateralBuilder(name, email, imageUrl);
+  _MenuLateralBuilder createState() => _MenuLateralBuilder(name, email, imageUrl, this.login);
 }
 
 class _MenuLateralBuilder extends State<MenuLateralBuilder> {
   String name;
   String email;
   String imageUrl;
+  String login;
 
-  _MenuLateralBuilder(this.name, this.email, this.imageUrl);
+  _MenuLateralBuilder(this.name, this.email, this.imageUrl, this.login);
 
   @override
   Widget build(BuildContext context) {
-    return menuLogado(context, name, email, imageUrl);
+    return menuLogado(context, name, email, imageUrl, login);
   }
 }
 
-menuLogado(BuildContext context, name, email, imageUrl){
+menuLogado(BuildContext context, name, email, imageUrl, login){
   return Drawer(
       child: ListView(
         children: <Widget>[
@@ -103,7 +106,7 @@ menuLogado(BuildContext context, name, email, imageUrl){
               ],
             ),
             onTap: () {
-              showAlertDialog(context);
+              showAlertDialog(context, login);
             },
           ),
         ],
@@ -111,7 +114,7 @@ menuLogado(BuildContext context, name, email, imageUrl){
     );
 }
 
-showAlertDialog(BuildContext context) {
+showAlertDialog(BuildContext context, String login) {
   Widget cancelaButton = FlatButton(
     child: Text("Cancelar"),
     onPressed:  () {Navigator.of(context).pop();},
@@ -119,7 +122,14 @@ showAlertDialog(BuildContext context) {
   Widget continuaButton = FlatButton(
     child: Text("Sair"),
     onPressed:  () {
-      signOutGoogle(context);
+      print(login);
+      if(login == 'facebook'){
+        facebookLoginout();
+      }else{
+        signOutGoogle(context);
+      }
+
+
 
       if (Platform.isAndroid) {
         SystemNavigator.pop();

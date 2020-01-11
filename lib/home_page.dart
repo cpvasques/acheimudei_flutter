@@ -10,11 +10,12 @@ class HomePage extends StatefulWidget {
   String name;
   String email;
   String imageUrl;
+  String login;
 
-  HomePage({this.name, this.email, this.imageUrl});
+  HomePage({this.name, this.email, this.imageUrl, this.login});
 
   @override
-  _HomePage createState() => _HomePage(name, email, imageUrl);
+  _HomePage createState() => _HomePage(name, email, imageUrl, login);
 }
 
 class _HomePage extends State<HomePage> {
@@ -22,8 +23,9 @@ class _HomePage extends State<HomePage> {
   String name;
   String email;
   String imageUrl;
+  String login;
 
-  _HomePage(this.name, this.email, this.imageUrl);
+  _HomePage(this.name, this.email, this.imageUrl, this.login);
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
@@ -57,7 +59,7 @@ class _HomePage extends State<HomePage> {
           });
         },
       ),
-      drawer: MenuLateralBuilder(name: name, email: email, imageUrl: imageUrl),
+      drawer: MenuLateralBuilder(name: name, email: email, imageUrl: imageUrl, login: login),
     );
   }
 

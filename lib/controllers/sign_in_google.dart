@@ -43,7 +43,7 @@ Future<String> signInWithGoogle(BuildContext context) async {
   }
 
   Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => HomePage(name: name, email: email, imageUrl: imageUrl)));
+      .push(MaterialPageRoute(builder: (context) => HomePage(name: name, email: email, imageUrl: imageUrl, login: 'google')));
 
   return 'signInWithGoogle succeeded: $user';
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:achei_mudei/controllers/sign_in_facebook.dart';
 
 class FacebookBuilder extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _FacebookBuilder extends State<FacebookBuilder> {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-
+        signInWithFacebook(context);
       },
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       highlightElevation: 0,
