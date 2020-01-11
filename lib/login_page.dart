@@ -12,33 +12,29 @@ class _LoginPage extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       /* appBar: AppBar(
+          title: Text("teste"),
+          centerTitle: true,
+          backgroundColor: Color(0xfffe7400),
+        ),*/
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("ACHEI MUDEI"),
-        centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
-      ),
-      body: ListView(
-        children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch, // add this
-            children: <Widget>[
-              Container(
-                child: LoginForm(),
-              ),
-              Container(
-                margin: EdgeInsets.only(top: 35, bottom: 5, left: 10, right: 10),
-                child: GoogleBuilder(),
-              ),
-              Container(
-                margin:
-                    EdgeInsets.only(top: 5, bottom: 10, left: 10, right: 10),
-                child: FacebookBuilder(),
-              ),
-            ],
-          ),
-        ],
-      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage("images/background.png"), fit: BoxFit.cover),
+        ),
+        child: ListView(
+          children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch, // add this
+              children: <Widget>[
+                Container(
+                  child: LoginForm(),
+                ),
+              ],
+            ),
+          ],
+        ),
+      )
     );
   }
 }

@@ -24,7 +24,7 @@ class _AnunciarImovelBuilder extends State<AnunciarImovelBuilder> {
                     child: Text('Deseja vender seu imóvel?',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Colors.orangeAccent,
+                          color: Color(0xffe17315),
                           fontSize: 35.0,
                           fontWeight: FontWeight.bold,
                         ))),
@@ -42,7 +42,7 @@ class _AnunciarImovelBuilder extends State<AnunciarImovelBuilder> {
                           color: Colors.white,
                         ),
                       ),
-                      color: Colors.orangeAccent,
+                      color: Color(0xffe17315),
                       onPressed: () {
                         print('anuncio');
                       },

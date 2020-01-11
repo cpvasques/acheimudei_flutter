@@ -33,7 +33,7 @@ class _HomePage extends State<HomePage> {
       appBar: AppBar(
         title: Text("ACHEI MUDEI"),
         centerTitle: true,
-        backgroundColor: Colors.orangeAccent,
+        backgroundColor: Color(0xffe17315),
       ),
       body: Container(
         decoration: BoxDecoration(color: Colors.white),
@@ -42,7 +42,7 @@ class _HomePage extends State<HomePage> {
         ),
       ),
       bottomNavigationBar: FancyBottomNavigation(
-        circleColor: Colors.orangeAccent,
+        circleColor: Color(0xffe17315),
         tabs: [
           TabData(iconData: Icons.home, title: "Home"),
           TabData(iconData: Icons.monetization_on, title: "Anunciar"),
