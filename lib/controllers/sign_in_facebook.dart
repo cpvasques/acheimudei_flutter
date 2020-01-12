@@ -1,9 +1,10 @@
+import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:achei_mudei/controllers/sign_in_facebook.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:achei_mudei/home_page.dart';
+import 'package:http/http.dart' as http;
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final FacebookLogin fbLogin = new FacebookLogin();
@@ -20,6 +21,11 @@ Future<FirebaseUser> signInWithFacebook(BuildContext context) async {
         await fbLogin.logInWithReadPermissions(['email', 'public_profile']);
     if (facebookLoginResult.status == FacebookLoginStatus.loggedIn) {
       FacebookAccessToken facebookAccessToken = facebookLoginResult.accessToken;
+      var graphResponse = await http.get(
+          'https://graph.facebook.com/v2.12/me?fields=name,first_name,last_name,email&access_token=${facebookAccessToken.token}');
+      var profile = json.decode(graphResponse.body);
+      print(profile);
+
       final AuthCredential credential = FacebookAuthProvider.getCredential(
           accessToken: facebookAccessToken.token);
 
@@ -33,12 +39,8 @@ Future<FirebaseUser> signInWithFacebook(BuildContext context) async {
       currentUser = await _auth.currentUser();
       assert(user.uid == currentUser.uid);
 
-      print('user');
-      print(user);
-      print('currentUser');
-      print(currentUser);
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => HomePage(name: 'name', email: 'email', imageUrl: 'imageUrl', login: 'facebook')));
+          .push(MaterialPageRoute(builder: (context) => HomePage(name: profile['name'], email: profile['email'], imageUrl: 'https://graph.facebook.com/v3.1/'+profile['id']+'/picture', login: 'facebook')));
       return currentUser;
     }
   } catch (e) {

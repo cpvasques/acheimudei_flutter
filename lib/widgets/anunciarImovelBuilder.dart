@@ -42,7 +42,7 @@ class _AnunciarImovelBuilder extends State<AnunciarImovelBuilder> {
                           color: Colors.white,
                         ),
                       ),
-                      color: Color(0xfffe7400),
+                      color: Colors.blue,
                       onPressed: () {
                         print('anuncio');
                       },
