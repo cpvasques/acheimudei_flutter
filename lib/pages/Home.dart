@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
-import 'package:achei_mudei/widgets/servicosBuilder.dart';
-import 'package:achei_mudei/widgets/anunciarImovelBuilder.dart';
-import 'package:achei_mudei/widgets/anunciosBuilder.dart';
-import 'package:achei_mudei/widgets/menuLateralBuilder.dart';
-import 'package:achei_mudei/second_page.dart';
+import 'package:achei_mudei/pages/Services.dart';
+import 'package:achei_mudei/widgets/newAnnounce.dart';
+import 'package:achei_mudei/widgets/announceBuilder.dart';
+import 'package:achei_mudei/widgets/sidebarBuilder.dart';
+import 'package:achei_mudei/pages/Chat.dart';
 
 class HomePage extends StatefulWidget {
   String name;

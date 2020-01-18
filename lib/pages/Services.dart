@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:achei_mudei/widgets/servicosDetalhesBuilder.dart';
+import 'package:achei_mudei/widgets/servicesDetailsBuilder.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ServicosBuilder extends StatefulWidget {
@@ -20,12 +20,12 @@ class _ServicosBuilder extends State<ServicosBuilder> {
             mainAxisSpacing: 10,
             crossAxisCount: 2,
             children: <Widget>[
-              servicosMaterial('Assessoria', FontAwesomeIcons.userTie, context, 1),
-              servicosMaterial('Documentista Imobiliário', FontAwesomeIcons.fileAlt, context, 2),
-              servicosMaterial('Elaboração de Contrato', FontAwesomeIcons.handshake, context, 3),
-              servicosMaterial('Escritório de Advocacia', FontAwesomeIcons.gavel, context, 4),
-              servicosMaterial('Registro de Imóveis', FontAwesomeIcons.home, context, 5),
-              servicosMaterial('Simulações de Financiamento', FontAwesomeIcons.handHoldingUsd, context, 6),
+              servicesMaterial('Assessoria', FontAwesomeIcons.userTie, context, 1),
+              servicesMaterial('Documentista Imobiliário', FontAwesomeIcons.fileAlt, context, 2),
+              servicesMaterial('Elaboração de Contrato', FontAwesomeIcons.handshake, context, 3),
+              servicesMaterial('Escritório de Advocacia', FontAwesomeIcons.gavel, context, 4),
+              servicesMaterial('Registro de Imóveis', FontAwesomeIcons.home, context, 5),
+              servicesMaterial('Simulações de Financiamento', FontAwesomeIcons.handHoldingUsd, context, 6),
             ],
           ),
         ),
@@ -34,7 +34,7 @@ class _ServicosBuilder extends State<ServicosBuilder> {
   }
 }
 
-Widget servicosMaterial(String label, IconData icone, BuildContext context, int index) {
+Widget servicesMaterial(String label, IconData icone, BuildContext context, int index) {
 
   return Material(
     color: Colors.blue,

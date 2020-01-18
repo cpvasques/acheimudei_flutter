@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:achei_mudei/widgets/botaoGoogle.dart';
-import 'package:achei_mudei/widgets/botaoFacebook.dart';
+import 'package:achei_mudei/widgets/googleButton.dart';
+import 'package:achei_mudei/widgets/facebookButton.dart';
 import 'package:achei_mudei/widgets/loginForm.dart';
 
 class LoginPage extends StatefulWidget {

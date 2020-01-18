@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:achei_mudei/home_page.dart';
+import 'package:achei_mudei/pages/Home.dart';
 import 'package:http/http.dart' as http;
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,7 +38,7 @@ Future<FirebaseUser> signInWithFacebook(BuildContext context) async {
       assert(await user.getIdToken() != null);
       currentUser = await _auth.currentUser();
       assert(user.uid == currentUser.uid);
-
+      print(profile);
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => HomePage(name: profile['name'], email: profile['email'], imageUrl: 'https://graph.facebook.com/v3.1/'+profile['id']+'/picture', login: 'facebook')));
       return currentUser;

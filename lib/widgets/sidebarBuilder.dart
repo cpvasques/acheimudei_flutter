@@ -125,11 +125,15 @@ showAlertDialog(BuildContext context, String login) {
       print(login);
       if(login == 'facebook'){
         facebookLoginout();
-      }else{
+      }else if(login == 'google'){
         signOutGoogle(context);
+      }else{
+        if (Platform.isAndroid) {
+          SystemNavigator.pop();
+        } else if (Platform.isIOS) {
+          exit(0);
+        }
       }
-
-
 
       if (Platform.isAndroid) {
         SystemNavigator.pop();

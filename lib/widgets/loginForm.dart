@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:achei_mudei/widgets/botaoGoogle.dart';
-import 'package:achei_mudei/widgets/botaoFacebook.dart';
+import 'package:achei_mudei/widgets/googleButton.dart';
+import 'package:achei_mudei/widgets/facebookButton.dart';
+import 'package:achei_mudei/pages/Home.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -10,11 +11,11 @@ class LoginForm extends StatefulWidget {
 class _LoginForm extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
-    return formulario();
+    return formulario(context);
   }
 }
 
-Widget formulario() {
+Widget formulario(BuildContext context) {
   final emailController = TextEditingController();
   final senhaController = TextEditingController();
 
@@ -83,7 +84,8 @@ Widget formulario() {
                           ),
                           color: Colors.blue,
                           onPressed: () {
-                            print('anuncio');
+                            Navigator.of(context)
+                                .push(MaterialPageRoute(builder: (context) => HomePage(name: 'Caue Pievetti Vasques', email: 'email@email.com', imageUrl: 'https://avatars1.githubusercontent.com/u/37748172?s=460&v=4', login: 'entrar')));
                           },
                         ),
                       ),
