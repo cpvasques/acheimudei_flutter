@@ -5,33 +5,33 @@ import 'package:achei_mudei/controllers/sign_in_facebook.dart';
 import 'dart:io';
 import 'dart:io' show Platform;
 
-class MenuLateralBuilder extends StatefulWidget {
+class Sidebar extends StatefulWidget {
   String name;
   String email;
   String imageUrl;
   String login;
 
-  MenuLateralBuilder({this.name, this.email, this.imageUrl, this.login});
+  Sidebar({this.name, this.email, this.imageUrl, this.login});
 
   @override
-  _MenuLateralBuilder createState() => _MenuLateralBuilder(name, email, imageUrl, this.login);
+  _Sidebar createState() => _Sidebar(name, email, imageUrl, this.login);
 }
 
-class _MenuLateralBuilder extends State<MenuLateralBuilder> {
+class _Sidebar extends State<Sidebar> {
   String name;
   String email;
   String imageUrl;
   String login;
 
-  _MenuLateralBuilder(this.name, this.email, this.imageUrl, this.login);
+  _Sidebar(this.name, this.email, this.imageUrl, this.login);
 
   @override
   Widget build(BuildContext context) {
-    return menuLogado(context, name, email, imageUrl, login);
+    return loggedIn(context, name, email, imageUrl, login);
   }
 }
 
-menuLogado(BuildContext context, name, email, imageUrl, login){
+loggedIn(BuildContext context, name, email, imageUrl, login){
   return Drawer(
       child: ListView(
         children: <Widget>[
@@ -115,11 +115,11 @@ menuLogado(BuildContext context, name, email, imageUrl, login){
 }
 
 showAlertDialog(BuildContext context, String login) {
-  Widget cancelaButton = FlatButton(
+  Widget cancelButton = FlatButton(
     child: Text("Cancelar"),
     onPressed:  () {Navigator.of(context).pop();},
   );
-  Widget continuaButton = FlatButton(
+  Widget okButton = FlatButton(
     child: Text("Sair"),
     onPressed:  () {
       print(login);
@@ -147,8 +147,8 @@ showAlertDialog(BuildContext context, String login) {
     title: Text("Achei Mudei"),
     content: Text("Deseja sair do aplicativo ?"),
     actions: [
-      cancelaButton,
-      continuaButton,
+      cancelButton,
+      okButton,
     ],
   );
 

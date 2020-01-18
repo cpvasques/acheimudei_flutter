@@ -40,7 +40,7 @@ class _HomePage extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(color: Colors.white),
         child: Center(
-          child: trocarPagina(currentPage),
+          child: changePage(currentPage),
         ),
       ),
       bottomNavigationBar: FancyBottomNavigation(
@@ -59,42 +59,22 @@ class _HomePage extends State<HomePage> {
           });
         },
       ),
-      drawer: MenuLateralBuilder(name: name, email: email, imageUrl: imageUrl, login: login),
+      drawer: Sidebar(name: name, email: email, imageUrl: imageUrl, login: login),
     );
   }
 
-  Widget pagina(String titulo) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Text(titulo),
-        RaisedButton(
-          child: Text(
-            "Abrir nova página",
-            style: TextStyle(color: Colors.white),
-          ),
-          color: Theme.of(context).primaryColor,
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => SecondPage()));
-          },
-        )
-      ],
-    );
-  }
-
-  trocarPagina(int page) {
+  changePage(int page) {
     switch (page) {
       case 0:
-        return AnunciosBuilder();
+        return AnnounceBuilder();
       case 1:
-        return AnunciarImovelBuilder();
+        return NewAnnounce();
       case 2:
-        return ServicosBuilder();
+        return ServicesBuilder();
       case 3:
-        return pagina('Pagina 3');
+        return Chat();
       default:
-        return AnunciosBuilder();
+        return AnnounceBuilder();
     }
   }
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class AnunciarImovelBuilder extends StatefulWidget {
+class NewAnnounce extends StatefulWidget {
   @override
-  _AnunciarImovelBuilder createState() => _AnunciarImovelBuilder();
+  _NewAnnounce createState() => _NewAnnounce();
 }
 
-class _AnunciarImovelBuilder extends State<AnunciarImovelBuilder> {
+class _NewAnnounce extends State<NewAnnounce> {
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ServicosDetalhesBuilder extends StatefulWidget {
+class ServicesDetails extends StatefulWidget {
 
   int index;
-  ServicosDetalhesBuilder({this.index});
+  ServicesDetails({this.index});
 
   @override
-  _ServicosDetalhesBuilder createState() => _ServicosDetalhesBuilder(index);
+  _ServicesDetails createState() => _ServicesDetails(index);
 }
 
-class _ServicosDetalhesBuilder extends State<ServicosDetalhesBuilder> {
+class _ServicesDetails extends State<ServicesDetails> {
 
   int index;
-  _ServicosDetalhesBuilder(this.index);
+  _ServicesDetails(this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -21,45 +20,45 @@ class _ServicosDetalhesBuilder extends State<ServicosDetalhesBuilder> {
       appBar: AppBar(title: Text("SERVIÇOS"), centerTitle: true),
       body: SingleChildScrollView(
         child: Column(children: [
-          tipoServico(index),
+          serviceType(index),
         ]),
       ),
     );
   }
 }
 
-Widget tipoServico(int index) {
+Widget serviceType(int index) {
   switch (index){
     case 1:
-      return formulario();
+      return form();
       break;
 
     default:
-      return formulario();
+      return form();
       break;
   }
 }
 
-Widget formulario(){
+Widget form(){
 
-  final assuntoController = TextEditingController();
-  final celularController = TextEditingController();
-  final servicoController = TextEditingController();
+  final textboxController = TextEditingController();
+  final phoneController = TextEditingController();
+  final serviceController = TextEditingController();
 
-  String assunto;
-  String celular;
-  String servico;
+  String textbox;
+  String phone;
+  String service;
 
-  void _assuntoChanged(String text){
-    assunto = text;
+  void _textboxChanged(String text){
+    textbox = text;
   }
 
-  void _celularChanged(String text){
-    assunto = text;
+  void _phoneChanged(String text){
+    phone = text;
   }
 
-  void _tipoServicoChanged(String text){
-    assunto = text;
+  void _serviceChanged(String text){
+    service = text;
   }
 
   return Container(
@@ -80,15 +79,15 @@ Widget formulario(){
                       ))),
               Container(
                 margin: EdgeInsets.only(top: 50),
-                child: buildTextField("Tipo de Serviço", servicoController, _assuntoChanged, 1),
+                child: buildTextField("Tipo de Serviço", serviceController, _serviceChanged, 1),
               ),
               Container(
                 margin: EdgeInsets.only(top: 10),
-                child: buildTextField("Celular", celularController, _assuntoChanged, 1),
+                child: buildTextField("Celular", phoneController, _phoneChanged, 1),
               ),
               Container(
                 margin: EdgeInsets.only(top: 10),
-                child: buildTextField("Assunto", assuntoController, _assuntoChanged, 3),
+                child: buildTextField("Assunto", textboxController, _textboxChanged, 3),
               ),
               Container(
                 margin: EdgeInsets.only(top: 20),
@@ -120,9 +119,9 @@ Widget formulario(){
 }
 
 
-Widget buildTextField(String label, TextEditingController controller, Function funcao, int linha){
+Widget buildTextField(String label, TextEditingController controller, Function func, int line){
   return TextField(
-        maxLines: linha,
+        maxLines: line,
         controller: controller,
         decoration: InputDecoration(
             labelText: label,
@@ -138,7 +137,7 @@ Widget buildTextField(String label, TextEditingController controller, Function f
         style: TextStyle(
             color: Color(0xfffe7400), fontSize: 25.0
         ),
-        onChanged: funcao
+        onChanged: func
     );
 }
 

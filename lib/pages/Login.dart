@@ -3,12 +3,12 @@ import 'package:achei_mudei/widgets/googleButton.dart';
 import 'package:achei_mudei/widgets/facebookButton.dart';
 import 'package:achei_mudei/widgets/loginForm.dart';
 
-class LoginPage extends StatefulWidget {
+class Login extends StatefulWidget {
   @override
-  _LoginPage createState() => _LoginPage();
+  _Login createState() => _Login();
 }
 
-class _LoginPage extends State<LoginPage> {
+class _Login extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:achei_mudei/pages/AnnounceDetails.dart';
 
-class AnunciosBuilder extends StatefulWidget {
+class AnnounceBuilder extends StatefulWidget {
   @override
-  _AnunciosBuilder createState() => _AnunciosBuilder();
+  _AnnounceBuilder createState() => _AnnounceBuilder();
 }
 
-class _AnunciosBuilder extends State<AnunciosBuilder> {
+class _AnnounceBuilder extends State<AnnounceBuilder> {
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -19,7 +19,7 @@ class _AnunciosBuilder extends State<AnunciosBuilder> {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => DetalheAnuncio()));
+                    MaterialPageRoute(builder: (context) => AnnounceDetails()));
               },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch, // add this
@@ -61,7 +61,7 @@ class _AnunciosBuilder extends State<AnunciosBuilder> {
                         color: Colors.blue,
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => DetalheAnuncio()));
+                              builder: (context) => AnnounceDetails()));
                         },
                       ))
                 ],

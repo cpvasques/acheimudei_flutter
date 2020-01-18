@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class DetalheAnuncio extends StatefulWidget {
+class AnnounceDetails extends StatefulWidget {
   @override
-  _DetalheAnuncio createState() => _DetalheAnuncio();
+  _AnnounceDetails createState() => _AnnounceDetails();
 }
 
 final List<String> imgList = [
@@ -62,7 +62,7 @@ List<T> map<T>(List list, Function handler) {
   return result;
 }
 
-class _DetalheAnuncio extends State<DetalheAnuncio> {
+class _AnnounceDetails extends State<AnnounceDetails> {
   int _current = 0;
 
   @override
@@ -102,17 +102,17 @@ class _DetalheAnuncio extends State<DetalheAnuncio> {
               },
             ),
           ),
-          valor(),
-          descricao(),
-          caracteristicas(),
+          value(),
+          description(),
+          details(),
         ]),
       ),
-      bottomNavigationBar: btnAchei(),
+      bottomNavigationBar: acheiButton(),
     );
   }
 }
 
-Widget valor() {
+Widget value() {
   return Container(
     width: 500,
     decoration: BoxDecoration(
@@ -149,7 +149,7 @@ Widget valor() {
   );
 }
 
-Widget descricao() {
+Widget description() {
   return Container(
     width: 500,
     decoration: BoxDecoration(
@@ -196,7 +196,7 @@ Widget descricao() {
   );
 }
 
-Widget caracteristicas() {
+Widget details() {
   return Container(
     width: 500,
     decoration: BoxDecoration(
@@ -368,7 +368,7 @@ Widget caracteristicas() {
   );
 }
 
-Widget btnAchei() {
+Widget acheiButton() {
   return Padding(
     padding: EdgeInsets.only(left: 12.0, right: 12.0, top: 2.0, bottom: 4.0),
     child: MaterialButton(

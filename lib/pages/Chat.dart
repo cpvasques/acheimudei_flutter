@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SecondPage extends StatefulWidget {
+class Chat extends StatefulWidget {
   @override
-  _SecondPageState createState() => _SecondPageState();
+  _Chat createState() => _Chat();
 }
 
-class _SecondPageState extends State<SecondPage> {
+class _Chat extends State<Chat> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

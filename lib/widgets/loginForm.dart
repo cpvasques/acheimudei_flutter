@@ -11,23 +11,23 @@ class LoginForm extends StatefulWidget {
 class _LoginForm extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
-    return formulario(context);
+    return form(context);
   }
 }
 
-Widget formulario(BuildContext context) {
+Widget form(BuildContext context) {
   final emailController = TextEditingController();
-  final senhaController = TextEditingController();
+  final passController = TextEditingController();
 
   String email;
-  String senha;
+  String pass;
 
   void _emailChanged(String text) {
     email = text;
   }
 
-  void _senhaChanged(String text) {
-    senha = text;
+  void _passChanged(String text) {
+    pass = text;
   }
 
   return Container(
@@ -64,7 +64,7 @@ Widget formulario(BuildContext context) {
                     child: Padding(
                       padding: EdgeInsets.only(right: 10, left: 10),
                       child: buildTextField(
-                          "Senha", senhaController, _senhaChanged, 1),
+                          "Senha", passController, _passChanged, 1),
                     )),
                 Container(
                     margin: EdgeInsets.only(top: 20),
@@ -134,9 +134,9 @@ Widget formulario(BuildContext context) {
 }
 
 Widget buildTextField(String label, TextEditingController controller,
-    Function funcao, int linha) {
+    Function func, int lines) {
   return TextField(
-      maxLines: linha,
+      maxLines: lines,
       controller: controller,
       decoration: InputDecoration(
           labelText: label,
@@ -149,5 +149,5 @@ Widget buildTextField(String label, TextEditingController controller,
             color: Color(0xfffe7400),
           ))),
       style: TextStyle(color: Color(0xfffe7400), fontSize: 20.0),
-      onChanged: funcao);
+      onChanged: func);
 }
